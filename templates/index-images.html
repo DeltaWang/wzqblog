@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+
+
+{% load staticfiles %} <!-- New line -->
+
+
+{% block content %}
+
+<style>
+html,body{margin: 0;height: 100%}
+  .beincenter{width:180px;
+
+height:180px;
+
+border:0 solid black;
+align: center;}
+  .beincenter img{width:100%;height:100%;}
+
+</style>
+
+
+                      	<div class="row-fluid">
+                      		<div class="col-md-3  hidden-sm hidden-xs col-lg-3" style="border-right:2px solid #aaa;background-color:white;height:1000px;>
+
+
+                            <img  src="{% static 'images/tx.jpg'%}" class="img-rounded beincenter img-responsive center-block"
+                           style="width:160px;
+
+                         height:160px;margin-top:25px;" />
+
+                          <div class="row-fluid" style="margin-top:20px;margin-left:15px">
+
+
+
+                      			<dl>
+                      				<dt>
+                      					About Me
+                      				</dt>
+                      				<dd>
+                                <ul contenteditable="true"  style="width:80%;margin:auto auto">
+                                                  <li>王子琪</li>
+                                                  <li>北京化工大学</li>
+                                                  <li>过程装备与控制工程</li>
+                                                  <li>大三在读生</li>
+                                                  <li>21岁 现居北京</li>
+
+                                                </ul>
+                                                                    				</dd>
+                      				<dt>
+                                学习ing
+                      				</dt>
+                      				<dd>
+                                <ul contenteditable="true" style="width:80%;margin:auto auto">
+
+                                  <li>django(python)</li>
+                                  <li>flask(python)</li>
+                                  <li>算法</li>
+                                  <li>rails，ruby</li>
+                                  <li>数据分析(python)</li>
+                                </ul>
+                      				</dd>
+
+                      				<dt>
+                      					Contact Me
+                      				</dt>
+                      				<dd>
+                                <ul contenteditable="true" style="width:80%;margin:auto auto"
+                                 >
+
+                                  <li>email：plunk777@163.com</li>
+                                  <li>微信：Tesla0403(麻烦请注明来源，Thanks！)</li>
+                                  <li>新浪微博：
+                                  <div >
+                                    王子清嗯就是这样
+                                  </div></li>
+
+                                  <li>github</li>
+                                <div>
+
+                                  欢迎来约!
+                                  不服来撕！
+
+
+                                </div>
+                                </ul>
+                      				</dd>
+                      				<dt>
+                      				</dt>
+                      				<dd>
+                      				</dd>
+                      			</dl>
+
+
+
+
+                          </div>
+                      		</div>
+
+
+
+
+
+<style media="screen">
+  .out{box-shadow: rgba(53, 41, 0, 0.74) 5px 3px 10px;border: 1px solid #F5F5F5;
+  border-radius:5px;border: 1px solid #F5F5F5}
+  .over{ border: 2px solid gray
+    ;}
+</style>
+
+
+                          <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12" style='height:1000px' >
+                            {% for x in article %}
+                            <article class="out hero-unit well"
+                            style="padding: 20px;background: #FFFFFF;
+                            margin-top:15px;margin-left:15px;margin-right:15px;
+
+                        margin-bottom: 30px;position: relative;overflow: hidden;
+                      }" onmouseover="this.className='well over'" onmouseout="this.className='out'">
+
+                            <div class="page-header" style="border-bottom:1px solid rgba(0, 70, 61, 0.8)">
+                              <h3>&nbsp&nbsp&nbsp <a href="#">{{x.title}}</a></h3>
+                            </div>
+                            <div class="container-fluid">
+                            	<div class="row-fluid">
+                            		<div class="col-md-12">
+                            			<blockquote     style="padding: 0 10px; border-left:5px solid rgba(12, 5, 5, 0.69)">
+                            				<p>
+
+                            					<div class="">
+                            					  &nbsp&nbsp <a href="#">{{ x.author }}</a>    &nbsp&nbsp <a href="#">{{ x.publish_time }}</a>
+                            					</div>
+
+
+                            				</p> <small>关键词/category <cite>&nbsp&nbsp<a href="#">{{ x.category }}</a></cite></small>
+                            			</blockquote>
+                            		</div>
+                                <div class="content">
+
+                <p>{{ x.content|truncatewords_html:10 }}</p>
+                <p><a class="btn" href="#" contenteditable="true">查看更多 »</a></p>
+
+
+                                </div>
+                            	</div>
+                            </div>
+
+                            </article>
+      {% endfor %}
+                            <div>
+
+
+                            <nav>
+                              <ul class="pagination pagination-centered pagination-lg">
+                                <li>
+                                  <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                  </a>
+                                </li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                  <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </nav>
+
+
+
+
+
+
+
+
+                      		</div>
+                      	</div>
+                      </div>
+
+
+
+
+
+
+
+
+            {% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+
+{% load staticfiles %}
+
+{% block content %}
+  <div class="row-fluid">
+    <div class="col-mg-12">
+
+      <article class="over hero-unit well"
+      style="padding: 20px;background: #FFFFFF;
+      margin-top:15px;margin-left:15px;margin-right:15px;
+
+  margin-bottom: 30px;position: relative;overflow: hidden;
+}">
+
+      <div class="page-header" style="border-bottom:1px solid rgba(0, 70, 61, 0.8);text-align:center">
+        <h2>&nbsp&nbsp&nbsp <a href="#">{{article.title}}</a></h2>
+      </div>
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="col-md-12">
+            <blockquote     style="padding: 0 10px; border-left:5px solid rgba(12, 5, 5, 0.69)">
+              <p>
+
+                <div class="">
+                  &nbsp&nbsp <a href="#">{{ article.author }}</a>    &nbsp&nbsp <a href="#">{{ article.publish_time }}</a>
+                </div>
+
+
+              </p> <small>关键词/category <cite>&nbsp&nbsp<a href="#">{{ article.category }}</a></cite></small>
+              <div>
+                <p>
+                  <small>fulu</small>
+
+                </p>
+              </div>
+            </blockquote>
+          </div>
+
+
+          <div class="content">
+
+<p>{{ article.content }}</p>
+
+
+          </div>
+        </div>
+      </div>
+      <button type="button" name="button">返回</button>
+
+      </article>
+      <div class="">
+        <!--导航 上一篇title下一篇
+title-->        
+      </div>
+
+    </div>
+  </div>
+
+      <div>
+
+<!--anniu、、-->
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+  </div>
+
+
+
+{% endblock %}
